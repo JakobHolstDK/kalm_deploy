@@ -1,0 +1,7 @@
+openknowit.com;signoz;3301;openstack03;http
+openknowit.com;zabbix;8080;zabbix01;http
+openknowit.com;grafana;3000;grafana01;http
+openknowit.com;prometeus;9090;datawarehouse01;http
+openknowit.com;influx;8086;datawarehouse01;http
+openknowit.com;airflow;8080;airflow01;http
+openknowit.com;maas;5240;maas01;http

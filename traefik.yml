@@ -1,0 +1,47 @@
+entryPoints:
+  http:
+    address: ":80"
+  traefik:
+    address: ":8080"
+
+serversTransport:
+    insecureSkipVerify: true
+
+api:
+  dashboard: true
+  insecure: true
+tls:
+  certificates:
+    - certFile: /opt/openknowit_traefik/cert/openknowit.cert
+      keyFile: /opt/openknowit_traefik/cert/openknowit.key
+    #certificatesResolvers:
+    #  myresolver:
+    #  acme:
+    #  email: jakob.holst@knowit.dk
+#    storage: acme.json
+#    httpChallenge:
+#      entryPoint: http
+#      tlsChallenge: {}
+#      caServer: "https://acme-staging-v02.api.letsencrypt.org/directory"
+
+    #caServer: "https://acme-v02.api.letsencrypt.org/directory"
+
+log:
+  level: "DEBUG"
+  #  filePath: "/tmp/traefik.log"
+ #format: "yaml"
+
+providers:
+  consul:
+    endpoints:
+      - "localhost:8500"
+    rootKey: "traefik"
+
+
+#providers:
+  #file:
+    #directory: "/opt/openknowit_traefik/dynamic_configs"
+    #watch: true
+#nomad:
+# endpoint:
+#   address: http://127.0.0.1:8500
